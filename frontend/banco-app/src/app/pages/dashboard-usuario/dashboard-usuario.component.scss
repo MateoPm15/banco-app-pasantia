@@ -1,0 +1,225 @@
+  /* Estilos para el input adaptado de Uiverse */
+  .block {
+    display: block;
+  }
+
+  .input-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7280;
+    z-index: 2;
+  }
+
+  .operaciones-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    color: #374151;
+  }
+
+  .operaciones-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+  }
+
+  /* Mantenemos los estilos anteriores y agregamos */
+  .operaciones-card {
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .operaciones-header {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border-radius: 12px 12px 0 0;
+  }
+
+  .operaciones-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #374151;
+  }
+
+  .operaciones-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+  }
+
+  .btn-operaciones {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    min-width: 140px;
+    justify-content: center;
+  }
+
+  .deposit-btn {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white !important;
+  }
+
+  .withdraw-btn {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white !important;
+  }
+
+  .btn-operaciones:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-operaciones:disabled {
+    opacity: 0.65;
+    background: #e9ecef;
+    color: #6c757d !important;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 992px) {
+    .btn-operaciones {
+      width: 100%;
+    }
+  }
+
+  /* Estilos para notificaciones */
+.notificaciones-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  min-width: 320px;
+  max-width: 400px;
+}
+
+.card.notification-success,
+.card.notification-error {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: visible;
+  margin-bottom: 1rem;
+  animation: slideIn 0.3s ease-out;
+
+  .wave {
+    display: none; /* Eliminamos el efecto de onda */
+  }
+
+  .icon-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    i {
+      font-size: 1.5rem;
+    }
+  }
+
+  .message-text-container {
+    flex-grow: 1;
+
+    .message-text {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .sub-text {
+      font-size: 0.875rem;
+      color: #6c757d;
+      margin: 0;
+    }
+  }
+
+  .cross-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: var(--dark-gray);
+    }
+  }
+}
+
+.notification-success {
+  background: #f0faf5;
+  border-left: 4px solid #27ae60;
+
+  .icon-container {
+    background-color: #27ae6033;
+
+    i {
+      color: #27ae60;
+    }
+  }
+
+  .message-text {
+    color: #27ae60;
+  }
+}
+
+.notification-error {
+  background: #fef0f0;
+  border-left: 4px solid #e74c3c;
+
+  .icon-container {
+    background-color: #e74c3c33;
+
+    i {
+      color: #e74c3c;
+    }
+  }
+
+  .message-text {
+    color: #e74c3c;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .notificaciones-container {
+    left: 20px;
+    right: 20px;
+    max-width: none;
+  }
+}

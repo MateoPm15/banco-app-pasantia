@@ -1,0 +1,127 @@
+/* Estilos adaptados con paleta corporativa */
+:root {
+  --primary-blue: #1A237E;    /* Azul marino principal */
+  --secondary-blue: #3F51B5;  /* Azul medio secundario */
+  --accent-blue: #2196F3;     /* Azul brillante para detalles */
+  --dark-gray: #2D3038;       /* Gris oscuro para textos */
+  --light-gray: #F5F6FA;      /* Gris claro para fondos */
+  --text-light: #FFFFFF;      /* Texto blanco */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--light-gray);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 2em;
+  background-color: var(--text-light);
+  border-radius: 25px;
+  width: 400px;
+  transition: 0.4s ease-in-out;
+  border: 2px solid var(--primary-blue);
+  box-shadow: 0 8px 24px rgba(45, 48, 56, 0.1);
+}
+
+.form:hover {
+  transform: scale(1.02);
+  border: 2px solid var(--secondary-blue);
+  box-shadow: 0 12px 28px rgba(31, 35, 126, 0.15);
+}
+
+#heading {
+  text-align: center;
+  color: var(--primary-blue);
+  font-size: 1.5em;
+  margin: 1em 0;
+  font-weight: 600;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  border-radius: 12px;
+  padding: 0.8em;
+  background-color: var(--light-gray);
+  box-shadow: inset 2px 5px 10px rgba(45, 48, 56, 0.05);
+  border: 1px solid #e0e0e0;
+}
+
+.input-icon {
+  height: 1.5em;
+  width: 1.5em;
+  fill: var(--primary-blue);
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: var(--dark-gray);
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.error-message {
+  color: #d32f2f;
+  text-align: center;
+  padding: 0.8em;
+  border-radius: 8px;
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+  font-weight: 500;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 2em;
+}
+
+.button1 {
+  padding: 0.8em 2em;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--primary-blue);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  font-weight: 600;
+}
+
+.button1:hover:not(:disabled) {
+  background-color: var(--secondary-blue);
+  box-shadow: 0 4px 16px rgba(31, 35, 126, 0.2);
+  transform: translateY(-2px);
+}
+
+.button1:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--primary-blue);
+}
+
+.button2 {
+  padding: 0.8em 2em;
+  border-radius: 8px;
+  border: 2px solid var(--primary-blue);
+  background-color: transparent;
+  color: var(--primary-blue);
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.button2:hover {
+  background-color: var(--primary-blue);
+  color: var(--text-light);
+}
