@@ -155,4 +155,3 @@ mateopm15-banco-app-pasantia/
 **Mateo Pilco**  
 📧 mateo.pilco.dev@gmail.com  
 🔗 [LinkedIn](https://www.linkedin.com/in/mateo-pilco-1703611a9/)  
-🛠️ Listo para demostrar el proyecto en entrevista técnica.
