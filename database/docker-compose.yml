@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sqlserver_container
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "Root1234!"          # La contraseña debe ser segura (mínimo 8 caracteres, mayúsculas, números)
+      ACCEPT_EULA: "Y"

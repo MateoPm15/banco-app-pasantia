@@ -1,0 +1,41 @@
+<div class="card shadow-lg">
+  <div class="card-header bg-primary text-white py-3">
+    <h3 class="mb-0 fs-4 fw-semibold"><i class="bi bi-clock-history me-2"></i>Historial de Movimientos</h3>
+  </div>
+  <div class="card-body p-4">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle table-striped">
+        <thead class="table-light">
+          <tr>
+            <th class="py-3">Fecha</th>
+            <th class="py-3">Tipo</th>
+            <th class="py-3">Valor</th>
+            <th class="py-3">Saldo Posterior</th>
+            <th class="py-3">Cuenta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let movimiento of movimientos">
+            <td class="align-middle">{{ movimiento.fecha | date:'dd/MM/yyyy HH:mm' }}</td>
+            <td class="align-middle">
+              <span class="badge rounded-pill py-2 px-3" [ngClass]="{
+                'bg-success-subtle text-success-emphasis': movimiento.tipoMovimiento === 'Crédito',
+                'bg-danger-subtle text-danger-emphasis': movimiento.tipoMovimiento === 'Débito'
+              }">
+                {{ movimiento.tipoMovimiento }}
+              </span>
+            </td>
+            <td class="align-middle fw-medium" [ngClass]="{
+              'text-success': movimiento.tipoMovimiento === 'Crédito',
+              'text-danger': movimiento.tipoMovimiento === 'Débito'
+            }">
+              {{ movimiento.valor | currency:'USD':'symbol':'1.2-2' }}
+            </td>
+            <td class="align-middle">{{ movimiento.saldo | currency:'USD':'symbol':'1.2-2' }}</td>
+            <td class="align-middle">{{ movimiento.cuentaId }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

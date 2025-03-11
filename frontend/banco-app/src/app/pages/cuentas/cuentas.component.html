@@ -1,0 +1,49 @@
+<div class="card mb-5 shadow-lg">
+  <div class="card-header bg-primary text-white py-3">
+    <h3 class="mb-0 fs-4 fw-semibold"><i class="bi bi-wallet2 me-2"></i>Cuentas Bancarias</h3>
+  </div>
+  <div class="card-body p-4">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle table-striped">
+        <thead class="table-light">
+          <tr>
+            <th class="py-3">Número de Cuenta</th>
+            <th class="py-3">Saldo</th>
+            <th class="py-3">Tipo</th>
+            <th class="py-3">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cuenta of cuentas" class="py-2">
+            <td class="align-middle fw-medium">{{ cuenta.numeroCuenta }}</td>
+            <td class="align-middle fw-semibold text-success">{{ cuenta.saldo | currency:'USD':'symbol':'1.2-2' }}</td>
+            <td class="align-middle">
+              <span class="badge rounded-pill py-2 px-3 d-inline-flex align-items-center" [ngClass]="{
+                'bg-info-subtle': cuenta.tipoCuenta === 'Ahorro',
+                'bg-success-subtle': cuenta.tipoCuenta === 'Corriente'
+              }">
+                <i class="bi me-2" [ngClass]="{
+                  'bi-piggy-bank': cuenta.tipoCuenta === 'Ahorro',
+                  'bi-wallet': cuenta.tipoCuenta === 'Corriente'
+                }"></i>
+                {{ cuenta.tipoCuenta | titlecase }}
+              </span>
+            </td>
+            <td class="align-middle">
+              <span class="badge rounded-pill py-2 px-3 d-inline-flex align-items-center" [ngClass]="{
+                'bg-success-subtle text-success': cuenta.estado,
+                'bg-secondary-subtle text-secondary': !cuenta.estado
+              }">
+                <i class="bi me-2" [ngClass]="{
+                  'bi-check-circle-fill': cuenta.estado,
+                  'bi-x-circle-fill': !cuenta.estado
+                }"></i>
+                {{ cuenta.estado ? 'Activa' : 'Inactiva' }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

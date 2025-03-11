@@ -1,0 +1,120 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f5f5f5;
+}
+
+// Estilos para tablas
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+
+  thead {
+    background-color: #3f51b5; // Color primario por defecto de Angular Material
+    th {
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 500;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #e0e0e0;
+
+      &:nth-child(even) {
+        background-color: #fafafa;
+      }
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+
+    td {
+      padding: 1rem;
+      color: rgba(0, 0, 0, 0.87);
+    }
+  }
+}
+
+// Estilos para botones
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &.btn-primary {
+    background-color: #3f51b5; // Color primario por defecto
+    color: white;
+
+    &:hover {
+      background-color: #303f9f; // Variante oscura del primario
+    }
+  }
+
+  &.btn-danger {
+    background-color: #f44336; // Color de advertencia por defecto
+    color: white;
+
+    &:hover {
+      background-color: #d32f2f; // Variante oscura del color de advertencia
+    }
+  }
+}
+
+// Estilos para tarjetas
+.mat-card {
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+// Estilos para formularios
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+// Estilos para mensajes de error
+.error-message {
+  color: #f44336; // Color de advertencia por defecto
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+// Estilos para el contenedor de la tabla
+.table-container {
+  overflow-x: auto;
+  margin: 1rem;
+  border-radius: 8px;
+}
+
+:root {
+  --primary-blue: #1A237E;
+  --primary-blue-rgb: 26, 35, 126;
+  --dark-gray: #2D3038;
+  --light-gray: #F5F6FA;
+}

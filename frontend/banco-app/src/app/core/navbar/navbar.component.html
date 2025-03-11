@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">Banco App</a>
+
+    <div class="d-flex">
+      <ng-container *ngIf="auth.isAuthenticated(); else loginButton">
+        <button class="btn btn-danger" (click)="logout()">Cerrar Sesión</button>
+      </ng-container>
+
+      <ng-template #loginButton>
+        <button class="btn btn-light" (click)="navigateToLogin()">Acceder</button>
+      </ng-template>
+    </div>
+  </div>
+</nav>
